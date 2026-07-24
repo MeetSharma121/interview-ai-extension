@@ -161,31 +161,57 @@ async function getActiveWebTab() {
 }
 
 async function ensureContentScriptInjected(tabId) {
-  try {
-    const pingResponse = await chrome.tabs.sendMessage(tabId, { action: 'ping' });
-    if (pingResponse && pingResponse.success) {
-      return;
-    }
-  } catch (error) {
-    // Continue to injection attempt if no listener exists
+  if (await pingContentScript(tabId)) {
+    return;
   }
 
   try {
     await chrome.scripting.executeScript({
       target: { tabId },
-      func: async () => {
-        if (!window.__interviewAiContentInitialized) {
-          window.__interviewAiContentInitialized = true;
-          await import(chrome.runtime.getURL('src/content.js'));
+      func: (contentScriptUrl) => {
+        if (window.__interviewAiContentInitialized) {
+          return;
         }
-      }
+
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = contentScriptUrl;
+        script.onload = () => {
+          window.__interviewAiContentInitialized = true;
+        };
+        script.onerror = () => {
+          console.error('Failed to load extension content script module', contentScriptUrl);
+        };
+        document.documentElement.appendChild(script);
+      },
+      args: [chrome.runtime.getURL('src/content.js')]
     });
 
-    // Give the content script a moment to initialize
-    await new Promise((resolve) => setTimeout(resolve, 250));
+    await waitForContentScriptReady(tabId, 2000);
   } catch (error) {
     throw new Error(`Unable to inject content script: ${error.message}`);
   }
+}
+
+async function pingContentScript(tabId) {
+  try {
+    const response = await chrome.tabs.sendMessage(tabId, { action: 'ping' });
+    return response && response.success;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function waitForContentScriptReady(tabId, timeout = 2000) {
+  const startTime = Date.now();
+  while (Date.now() - startTime < timeout) {
+    if (await pingContentScript(tabId)) {
+      return;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 150));
+  }
+
+  throw new Error('Content script did not become ready after injection');
 }
 
 /**
