@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview AI Autofill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Interview AI Autofill</h1>
+      <p class="subtitle">Generate structured feedback instantly</p>
+    </div>
+
+    <div class="form-section">
+      <div class="input-group">
+        <label for="transcript">Interview Transcript</label>
+        <textarea id="transcript" placeholder="Paste the interview transcript here..." rows="6"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="feedback">Interviewer Notes / Feedback</label>
+        <textarea id="feedback" placeholder="Paste your interview notes and initial feedback here..." rows="5"></textarea>
+      </div>
+
+      <button id="generateBtn" class="generate-btn">Generate Report</button>
+    </div>
+
+    <div id="status" class="status-message" style="display: none;"></div>
+
+    <div id="spinner" class="spinner" style="display: none;">
+      <div class="spinner-ring"></div>
+      <p>Generating feedback...</p>
+    </div>
+
+    <div id="success" class="success-message" style="display: none;">
+      <div class="success-icon">✓</div>
+      <p>Report generated and page filled successfully!</p>
+    </div>
+
+    <div id="error" class="error-message" style="display: none;">
+      <div class="error-icon">✕</div>
+      <p id="errorText"></p>
+    </div>
+
+    <div class="footer">
+      <a href="#" id="settingsLink">Settings</a>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+
+  <div id="settingsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button class="close-btn" id="closeSettings">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <label for="apiKey">OpenAI API Key</label>
+          <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+          <small>Your API key is stored locally and never shared.</small>
+        </div>
+        <div class="input-group">
+          <label for="model">OpenAI Model</label>
+          <select id="model">
+            <option value="gpt-4">GPT-4</option>
+            <option value="gpt-4-turbo" selected>GPT-4 Turbo</option>
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveSettings" class="save-btn">Save Settings</button>
+        <button id="cancelSettings" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

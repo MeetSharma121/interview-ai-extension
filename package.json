@@ -1,0 +1,22 @@
+{
+  "name": "interview-ai-extension",
+  "version": "1.0.0",
+  "description": "Generate structured interview feedback using OpenAI and automatically fill Interview.io reports",
+  "main": "src/background.js",
+  "scripts": {
+    "start": "echo 'Load the extension in Chrome: chrome://extensions/ -> Load unpacked'",
+    "lint": "eslint src/ popup/",
+    "test": "echo 'Add tests here'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "interview",
+    "feedback",
+    "openai",
+    "interview.io"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

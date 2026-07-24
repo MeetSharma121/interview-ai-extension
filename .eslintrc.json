@@ -1,0 +1,27 @@
+{
+  "name": "interview-ai-extension",
+  "version": "1.0.0",
+  "description": "Chrome Extension for AI-powered interview feedback generation",
+  "main": "src/background.js",
+  "scripts": {
+    "dev": "echo 'Load extension in chrome://extensions with Developer Mode enabled'",
+    "build": "echo 'Extension is ready to load - no build step needed'",
+    "test": "echo 'Run tests with your test framework'",
+    "lint": "echo 'Add ESLint configuration for linting'",
+    "generate-icons": "node generate-icons.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "interview",
+    "feedback",
+    "openai",
+    "gpt",
+    "interview.io",
+    "autofill"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
