@@ -41,6 +41,8 @@ async function handleMessage(request, sender, sendResponse) {
       await handleGetPageState(sendResponse);
     } else if (request.action === 'clearFields') {
       await handleClearFields(sendResponse);
+    } else if (request.action === 'ping') {
+      sendResponse({ success: true, message: 'pong' });
     } else {
       sendResponse({
         success: false,

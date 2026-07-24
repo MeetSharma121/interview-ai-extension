@@ -104,6 +104,8 @@ async function generateAndFillReport(transcript, feedback, apiKey) {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
       try {
+        await ensureContentScriptInjected(tab.id);
+
         const response = await chrome.tabs.sendMessage(tab.id, {
           action: 'generateAndFillReport',
           transcript,
@@ -136,6 +138,34 @@ async function generateAndFillReport(transcript, feedback, apiKey) {
     showError(`Error: ${error.message}`);
     hideSpinner();
     enableButton();
+  }
+}
+
+async function ensureContentScriptInjected(tabId) {
+  try {
+    const pingResponse = await chrome.tabs.sendMessage(tabId, { action: 'ping' });
+    if (pingResponse && pingResponse.success) {
+      return;
+    }
+  } catch (error) {
+    // Continue to injection attempt if no listener exists
+  }
+
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId },
+      func: async () => {
+        if (!window.__interviewAiContentInitialized) {
+          window.__interviewAiContentInitialized = true;
+          await import(chrome.runtime.getURL('src/content.js'));
+        }
+      }
+    });
+
+    // Give the content script a moment to initialize
+    await new Promise((resolve) => setTimeout(resolve, 250));
+  } catch (error) {
+    throw new Error(`Unable to inject content script: ${error.message}`);
   }
 }
 
