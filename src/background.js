@@ -59,7 +59,7 @@ chrome.runtime.onInstalled.addListener(() => {
     id: 'interview-ai-fill',
     title: 'Fill Interview Report',
     contexts: ['page'],
-    documentUrlPatterns: ['https://*.intervue.io/*']
+    documentUrlPatterns: ['https://*.intervue.io/*', 'https://www.intervue.io/*', 'https://intervue.io/*']
   });
 });
 

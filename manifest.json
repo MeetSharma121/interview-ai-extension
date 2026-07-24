@@ -7,10 +7,13 @@
     "activeTab",
     "scripting",
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "tabs"
   ],
   "host_permissions": [
     "https://*.intervue.io/*",
+    "https://www.intervue.io/*",
+    "https://intervue.io/*",
     "https://api.openai.com/*"
   ],
   "background": {
@@ -28,7 +31,9 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.intervue.io/*"
+        "https://*.intervue.io/*",
+        "https://www.intervue.io/*",
+        "https://intervue.io/*"
       ],
       "js": [
         "src/content.js"
