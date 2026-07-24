@@ -7,12 +7,12 @@ This document provides comprehensive testing procedures for the Interview AI Aut
 ### Prerequisites
 - Chrome 88+ browser
 - OpenAI API key
-- Interview.io account with test access to report generation page
+- Intervue.io account with test access to report generation page
 
 ### Initial Setup
 1. Load extension in Developer Mode (chrome://extensions)
 2. Configure API key in Settings
-3. Open interview.io in another tab
+3. Open intervue.io in another tab
 
 ## Test Categories
 
@@ -82,7 +82,7 @@ console.log('Validation result:', validation);
 ```javascript
 import { findElementByLabel, findAllEditableFields } from 'src/autofill.js';
 
-// On interview.io report page:
+// On intervue.io report page:
 const fields = findAllEditableFields();
 console.log('Found fields:', fields.length);
 
@@ -176,10 +176,10 @@ console.log('Parsed:', parsed.key === 'value');
 - Settings save successfully
 - Settings persist after page reload
 
-### Test: Autofill on Interview.io
+### Test: Autofill on Intervue.io
 
 **Steps:**
-1. Navigate to interview.io report generation page
+1. Navigate to intervue.io report generation page
 2. Open extension popup
 3. Enter test transcript and feedback
 4. Click "Generate Report"
@@ -194,7 +194,7 @@ console.log('Parsed:', parsed.key === 'value');
   - [ ] Suggestions (as bullet list)
   - [ ] Technical Skills
   - [ ] Communication
-- Page remains on interview.io
+- Page remains on intervue.io
 - No JavaScript errors in console
 
 ## 3. UI/UX Tests
@@ -288,7 +288,7 @@ For each browser:
 1. Load extension
 2. Configure API key
 3. Test popup submission
-4. Test autofill on interview.io
+4. Test autofill on intervue.io
 
 ## 6. Performance Tests
 
@@ -365,13 +365,13 @@ await generateAndFillReport(longText, 'feedback', apiKey);
 
 ### Test: Page Not Found
 
-1. Close interview.io page
+1. Close intervue.io page
 2. Try to generate report
-3. Expected: Error "Interview.io page did not load"
+3. Expected: Error "Intervue.io page did not load"
 
 ### Test: Field Not Found
 
-1. Navigate to interview.io but with different page layout
+1. Navigate to intervue.io but with different page layout
 2. Generate report
 3. Expected: Error or partial filling, no crash
 
@@ -473,7 +473,7 @@ Before each release:
 - [ ] Run all unit tests
 - [ ] Test on multiple Chrome versions
 - [ ] Test with sample transcript
-- [ ] Verify autofill on interview.io
+- [ ] Verify autofill on intervue.io
 - [ ] Check for console errors
 - [ ] Verify API error handling
 - [ ] Test settings persistence

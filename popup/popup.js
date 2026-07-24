@@ -88,7 +88,7 @@ async function handleGenerateReport() {
 }
 
 /**
- * Generate report and fill the Interview.io page
+ * Generate report and fill the Intervue.io page
  */
 async function generateAndFillReport(transcript, feedback, apiKey) {
   try {

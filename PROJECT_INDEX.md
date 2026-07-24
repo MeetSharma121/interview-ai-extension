@@ -2,7 +2,7 @@
 
 ## 📋 Project Overview
 
-**Interview AI Autofill** is a production-ready Chrome Extension (Manifest V3) that generates structured interview feedback using OpenAI GPT-4 and automatically fills Interview.io report pages.
+**Interview AI Autofill** is a production-ready Chrome Extension (Manifest V3) that generates structured interview feedback using OpenAI GPT-4 and automatically fills Intervue.io report pages.
 
 **Version:** 1.0.0  
 **Size:** ~244KB  
@@ -87,7 +87,7 @@ interview-ai-extension/
 
 ### ✨ Core Functionality
 - Generate AI interview feedback using GPT-4 Turbo
-- Automatically fill Interview.io report forms
+- Automatically fill Intervue.io report forms
 - Detect fields by visible labels (not hardcoded classes)
 - Support for CKEditor contenteditable divs
 - JSON-structured feedback output
@@ -133,7 +133,7 @@ interview-ai-extension/
 
 ### `src/content.js` (Content Script)
 **Responsibilities:**
-- Run in Interview.io page context
+- Run in Intervue.io page context
 - Message handler for popup requests
 - Orchestrate API calls and autofill
 - Error propagation
@@ -329,7 +329,7 @@ The AI generates feedback in this JSON format:
 npm run generate-icons
 
 # View logs (content script)
-# Open DevTools on interview.io (F12)
+# Open DevTools on intervue.io (F12)
 # Look for [Interview AI timestamp] messages
 
 # View logs (popup)
@@ -341,7 +341,7 @@ npm run generate-icons
 
 ```bash
 # Test field detection
-# In browser console on interview.io:
+# In browser console on intervue.io:
 debugLogFields()
 
 # Test filling with sample data
@@ -459,7 +459,7 @@ See [LICENSE](LICENSE) file for details.
 ## 🙏 Credits
 
 - **OpenAI** for GPT-4 API
-- **Interview.io** for the platform
+- **Intervue.io** for the platform
 - **Chrome** for the extension platform
 - Built with ❤️ for interviewers
 

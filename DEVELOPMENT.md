@@ -18,7 +18,7 @@ This guide helps developers understand, extend, and debug the Interview AI Autof
 ┌─────────────────────────────────────────────────────────────┐
 │                    Chrome Browser                           │
 ├─────────────────────────────────────────────────────────────┤
-│  Interview.io Page                                          │
+│  Intervue.io Page                                          │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │ Content Script (src/content.js)                     │   │
 │  │ - Listens for messages                              │   │
@@ -119,7 +119,7 @@ chrome://extensions/ → Interview AI Autofill → Details → Service worker
 
 **Content Script Logs:**
 ```
-1. Open DevTools on interview.io (F12)
+1. Open DevTools on intervue.io (F12)
 2. Go to Console tab
 3. Logs will appear with [Interview AI timestamp] prefix
 ```
@@ -135,7 +135,7 @@ chrome://extensions/ → Interview AI Autofill → Details → Service worker
 
 **Breakpoints in Content Script:**
 ```
-1. Open DevTools on interview.io (F12)
+1. Open DevTools on intervue.io (F12)
 2. Sources tab → Content scripts → src/content.js
 3. Set breakpoints
 4. Trigger action from popup
@@ -173,7 +173,7 @@ console.log('Response from content script:', response);
 
 ### Testing Field Detection
 
-In browser console (on interview.io):
+In browser console (on intervue.io):
 
 ```javascript
 // Find all editable fields
@@ -293,11 +293,11 @@ chrome.storage.sync.get(['newSetting'], (items) => {
 - [ ] Feedback input accepts text
 - [ ] Generate button is disabled when fields empty
 - [ ] Generate button works with sample text
-- [ ] Autofill finds fields on interview.io
+- [ ] Autofill finds fields on intervue.io
 - [ ] Fields are filled with generated content
 - [ ] Error messages display correctly
 - [ ] Success message shows after fill
-- [ ] Content script loads on interview.io
+- [ ] Content script loads on intervue.io
 
 ### Test with Sample Data
 

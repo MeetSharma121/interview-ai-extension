@@ -29,7 +29,7 @@ Complete checklist before deploying to Chrome Web Store or sharing.
 - [x] API key configuration works
 - [x] OpenAI integration functions
 - [x] Autofill detects fields correctly
-- [x] Field filling works on interview.io
+- [x] Field filling works on intervue.io
 - [x] Error handling displays properly
 - [x] Success messages show correctly
 - [x] No memory leaks in DevTools
@@ -122,7 +122,7 @@ Complete checklist before deploying to Chrome Web Store or sharing.
 Extension Name: Interview AI Autofill
 Short Description (132 chars): 
 "Generate structured interview feedback using OpenAI and automatically 
-fill Interview.io reports"
+fill Intervue.io reports"
 
 Full Description (4000 chars max):
 [Copy from README.md features section]

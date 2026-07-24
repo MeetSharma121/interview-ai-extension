@@ -32,7 +32,7 @@ chrome.tabs.sendMessage(tabId, {
 
 ### `generateAndFillReport`
 
-Generate AI feedback and fill Interview.io form.
+Generate AI feedback and fill Intervue.io form.
 
 **Request:**
 ```javascript
@@ -84,7 +84,7 @@ if (response.success) {
 **Errors:**
 - `"Transcript and feedback are required"` - Missing input
 - `"Failed to generate feedback: [OpenAI error]"` - API call failed
-- `"Interview.io page did not load"` - Page not detected
+- `"Intervue.io page did not load"` - Page not detected
 - `"No fields were filled"` - Form fields not found
 
 ---
@@ -125,7 +125,7 @@ console.log('Test fill result:', response.data);
 
 ### `getPageState`
 
-Get current state of Interview.io report page.
+Get current state of Intervue.io report page.
 
 **Request:**
 ```javascript
@@ -451,7 +451,7 @@ const models = getAvailableModels();
 
 ### `fillInterviewIOPage(feedback)`
 
-Fill Interview.io report page with feedback.
+Fill Intervue.io report page with feedback.
 
 **Parameters:**
 - `feedback` (Object): Structured feedback object
@@ -643,7 +643,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 | `"API key is required"` | No API key configured | Set API key in Settings |
 | `"OpenAI API Error: 401"` | Invalid API key | Verify and update API key |
 | `"OpenAI API Error: 429"` | Rate limit exceeded | Wait before retrying |
-| `"Interview.io page did not load"` | Page not detected | Ensure on interview.io report page |
+| `"Intervue.io page did not load"` | Page not detected | Ensure on intervue.io report page |
 | `"No fields were filled"` | Form fields not found | Check page structure |
 | `"Request timed out"` | API request too slow | Try shorter transcript |
 

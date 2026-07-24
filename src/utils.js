@@ -272,11 +272,11 @@ export function getElementText(element) {
 }
 
 /**
- * Check if we're on Interview.io page
- * @returns {boolean} - True if on Interview.io
+ * Check if we're on Intervue.io page
+ * @returns {boolean} - True if on Intervue.io
  */
 export function isInterviewIOPage() {
-  return window.location.hostname.includes('interview.io');
+  return window.location.hostname.includes('intervue.io');
 }
 
 /**

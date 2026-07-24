@@ -12,9 +12,9 @@
 ```
 - Manifest version: 3
 - Permissions: activeTab, scripting, storage, contextMenus
-- Host permissions: interview.io, api.openai.com
+- Host permissions: intervue.io, api.openai.com
 - Background: Service worker at src/background.js
-- Content scripts: Injected into interview.io pages
+- Content scripts: Injected into intervue.io pages
 - Icons: 16, 48, 128 px versions
 ```
 
@@ -82,7 +82,7 @@ Imports:
 - **Status:** ✅ Complete
 ```
 Key Responsibilities:
-- Run in interview.io page context
+- Run in intervue.io page context
 - Handle messages from popup
 - Orchestrate API calls
 - Call autofill logic

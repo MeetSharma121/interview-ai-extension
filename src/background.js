@@ -59,7 +59,7 @@ chrome.runtime.onInstalled.addListener(() => {
     id: 'interview-ai-fill',
     title: 'Fill Interview Report',
     contexts: ['page'],
-    documentUrlPatterns: ['https://interview.io/*']
+    documentUrlPatterns: ['https://*.intervue.io/*']
   });
 });
 
@@ -74,12 +74,12 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 /**
- * Handle tab update - check if we're on interview.io
+ * Handle tab update - check if we're on intervue.io
  */
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === 'complete' && tab.url?.includes('interview.io')) {
-    // Optionally perform actions when Interview.io page loads
-    console.log('Interview.io page detected:', tab.url);
+  if (changeInfo.status === 'complete' && tab.url?.includes('intervue.io')) {
+    // Optionally perform actions when Intervue.io page loads
+    console.log('Intervue.io page detected:', tab.url);
 
     // Inject content script if needed (it's defined in manifest, but this is extra assurance)
     chrome.tabs.sendMessage(tabId, { action: 'ping' }).catch(() => {

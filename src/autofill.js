@@ -1,6 +1,6 @@
 /**
  * Autofill Module
- * Handles filling Interview.io report page with generated feedback
+ * Handles filling Intervue.io report page with generated feedback
  */
 
 import {
@@ -13,7 +13,7 @@ import {
 } from './utils.js';
 
 /**
- * Field mapping from feedback keys to Interview.io labels
+ * Field mapping from feedback keys to Intervue.io labels
  */
 const FIELD_MAPPING = {
   overall_feedback: ['Overall feedback', 'Overall Feedback'],
@@ -27,7 +27,7 @@ const FIELD_MAPPING = {
 };
 
 /**
- * Fill Interview.io report page with feedback
+ * Fill Intervue.io report page with feedback
  * @param {Object} feedback - Structured feedback object
  * @returns {Object} - Result with filled fields and errors
  */
@@ -42,7 +42,7 @@ export function fillInterviewIOPage(feedback) {
     errors: []
   };
 
-  log('Starting Interview.io page autofill...', 'info');
+  log('Starting Intervue.io page autofill...', 'info');
 
   // Iterate through feedback fields
   for (const [feedbackKey, labels] of Object.entries(FIELD_MAPPING)) {
@@ -243,7 +243,7 @@ export function validatePageFilled() {
 }
 
 /**
- * Wait for Interview.io page to load
+ * Wait for Intervue.io page to load
  * @param {number} timeout - Timeout in milliseconds
  * @returns {Promise<boolean>} - True if page loaded
  */
@@ -252,17 +252,17 @@ export async function waitForInterviewIOPageLoad(timeout = 5000) {
 
   return new Promise((resolve) => {
     const checkPage = () => {
-      // Check if we can find typical Interview.io elements
+      // Check if we can find typical Intervue.io elements
       const fields = findAllEditableFields();
 
       if (fields.length > 0) {
-        log('Interview.io page detected with editable fields', 'info');
+        log('Intervue.io page detected with editable fields', 'info');
         resolve(true);
         return;
       }
 
       if (Date.now() - startTime > timeout) {
-        log('Interview.io page load timeout', 'warn');
+        log('Intervue.io page load timeout', 'warn');
         resolve(false);
         return;
       }
@@ -334,7 +334,7 @@ export function getPageState() {
 export function debugLogFields() {
   const fields = findAllEditableFields();
 
-  console.group('Interview.io Fields');
+  console.group('Intervue.io Fields');
   console.log(`Total fields found: ${fields.length}`);
 
   for (const field of fields) {

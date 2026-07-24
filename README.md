@@ -1,6 +1,6 @@
 # Interview AI Autofill - Chrome Extension
 
-A production-ready Chrome Extension (Manifest V3) that generates structured interview feedback using OpenAI and automatically fills Interview.io report pages.
+A production-ready Chrome Extension (Manifest V3) that generates structured interview feedback using OpenAI and automatically fills Intervue.io report pages.
 
 ## Features
 
@@ -62,8 +62,8 @@ A production-ready Chrome Extension (Manifest V3) that generates structured inte
 
 ### Basic Workflow
 
-1. **Open Interview.io Report Page**
-   - Navigate to interview.io and go to the "Generate Report" page
+1. **Open Intervue.io Report Page**
+   - Navigate to https://www.intervue.io/generate-report/
    - Ensure the form fields are visible
 
 2. **Click the Extension**
@@ -112,7 +112,7 @@ interview-ai-extension/
 │
 ├── src/
 │   ├── background.js        # Service worker (background tasks)
-│   ├── content.js           # Content script (runs on Interview.io)
+│   ├── content.js           # Content script (runs on Intervue.io)
 │   ├── autofill.js          # Auto-fill logic for report fields
 │   ├── openai.js            # OpenAI API integration
 │   ├── prompts.js           # Prompt templates for AI
@@ -211,7 +211,7 @@ debugLogFields();
 - `activeTab`: Access current tab for autofill
 - `scripting`: Inject content script
 - `storage`: Store API key locally
-- `host_permissions`: Only interview.io and api.openai.com
+- `host_permissions`: Only intervue.io and api.openai.com
 
 ## Troubleshooting
 
@@ -221,7 +221,7 @@ debugLogFields();
 - Generate a new key from https://platform.openai.com/api-keys
 
 ### "No fields were filled"
-- Ensure you're on Interview.io report generation page
+- Ensure you're on Intervue.io report generation page
 - Check browser console for error messages
 - Fields must have visible labels
 
@@ -262,7 +262,7 @@ export function getUserPrompt(transcript, notes) {
 
 Test autofill on the page:
 ```javascript
-// In browser console (on interview.io)
+// In browser console (on intervue.io)
 chrome.runtime.sendMessage({ action: 'testFill' });
 ```
 

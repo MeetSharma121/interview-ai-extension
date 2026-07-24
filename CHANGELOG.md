@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Core Features
 - **AI-Powered Feedback Generation:** Generate structured interview feedback using OpenAI GPT-4 Turbo
-- **Automatic Autofill:** Automatically detect and fill Interview.io report form fields
+- **Automatic Autofill:** Automatically detect and fill Intervue.io report form fields
 - **Intelligent Field Detection:** Detect form fields by visible labels instead of hardcoded CSS classes
 - **CKEditor Support:** Full support for contenteditable divs used by CKEditor 5
 
@@ -175,11 +175,11 @@ interview-ai-extension/
 - Requires OpenAI API key (not free without API account)
 - Assumes English language transcripts
 - Field detection relies on label text matching
-- Interview.io page structure may change in future
+- Intervue.io page structure may change in future
 
 ### 🎁 Future Enhancements (Roadmap)
 
-- [ ] 1.1.0: Support for multiple interview.io page layouts
+- [ ] 1.1.0: Support for multiple intervue.io page layouts
 - [ ] 1.2.0: Customizable prompt templates
 - [ ] 1.3.0: Batch interview processing
 - [ ] 1.4.0: Export to multiple formats (PDF, DOCX)
@@ -232,7 +232,7 @@ Email: [Your Email]
 ### What Works
 
 - Generate interview feedback using GPT-4 Turbo
-- Auto-fill Interview.io report pages
+- Auto-fill Intervue.io report pages
 - Detect fields by visible labels
 - Store API key securely
 - Beautiful dark-themed UI
@@ -262,7 +262,7 @@ Email: [Your Email]
 ### Credits
 
 - OpenAI API for GPT-4 Turbo
-- Interview.io for the platform
+- Intervue.io for the platform
 - Chrome Web Store for distribution
 
 ---

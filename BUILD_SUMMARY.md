@@ -162,7 +162,7 @@ A complete, production-ready Chrome Extension (Manifest V3) has been successfull
 - **Type:** Chrome Extension (Manifest V3)
 - **Architecture:** Event-driven with message passing
 - **Service Worker:** Background service worker
-- **Content Script:** Injected into interview.io pages
+- **Content Script:** Injected into intervue.io pages
 - **Storage:** Chrome's encrypted storage.sync
 
 ### JavaScript
@@ -198,7 +198,7 @@ A complete, production-ready Chrome Extension (Manifest V3) has been successfull
 6. Start generating reports!
 
 ### First Use
-1. Go to interview.io report generation page
+1. Go to intervue.io report generation page
 2. Click extension icon
 3. Paste interview transcript
 4. Paste interviewer notes
@@ -260,7 +260,7 @@ A complete, production-ready Chrome Extension (Manifest V3) has been successfull
 
 ### Extension Features
 ✅ Automatic interview feedback generation  
-✅ Interview.io form autofill  
+✅ Intervue.io form autofill  
 ✅ GPT-4 integration  
 ✅ Beautiful UI  
 ✅ Settings configuration  
@@ -374,7 +374,7 @@ These are intentionally omitted to keep the extension lightweight and secure.
 4. [ ] Review code quality
 
 ### Short Term (This Week)
-1. [ ] Test on real interview.io page
+1. [ ] Test on real intervue.io page
 2. [ ] Verify autofill works
 3. [ ] Test error scenarios
 4. [ ] Review all documentation
@@ -404,7 +404,7 @@ These are intentionally omitted to keep the extension lightweight and secure.
 5. **Debug Mode** - Check console logs
 
 ### Extend These Areas
-1. **Add more field mappings** - Interview.io changes
+1. **Add more field mappings** - Intervue.io changes
 2. **Customize prompts** - Your own feedback style
 3. **Add new models** - Future OpenAI releases
 4. **Implement features** - From roadmap
@@ -475,7 +475,7 @@ These are intentionally omitted to keep the extension lightweight and secure.
 You now have a **complete, production-ready Chrome Extension** that:
 
 1. ✅ Generates interview feedback using AI
-2. ✅ Automatically fills interview.io reports
+2. ✅ Automatically fills intervue.io reports
 3. ✅ Has beautiful, modern UI
 4. ✅ Includes comprehensive documentation
 5. ✅ Follows security best practices

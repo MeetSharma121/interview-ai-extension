@@ -1,6 +1,6 @@
 /**
  * Content Script
- * Runs in the context of the Interview.io webpage
+ * Runs in the context of the Intervue.io webpage
  * Receives messages from popup and autofills the report page
  */
 
@@ -73,11 +73,11 @@ async function handleGenerateAndFillReport(request, sendResponse) {
     }
 
     // Wait for page to load
-    log('Waiting for Interview.io page to load...', 'info');
+    log('Waiting for Intervue.io page to load...', 'info');
     const pageLoaded = await waitForInterviewIOPageLoad(5000);
 
     if (!pageLoaded) {
-      throw new Error('Interview.io page did not load. Please ensure you are on the report page.');
+      throw new Error('Intervue.io page did not load. Please ensure you are on the report page.');
     }
 
     // Generate feedback from OpenAI
@@ -131,7 +131,7 @@ async function handleTestFill(sendResponse) {
     const pageLoaded = await waitForInterviewIOPageLoad(5000);
 
     if (!pageLoaded) {
-      throw new Error('Interview.io page did not load');
+      throw new Error('Intervue.io page did not load');
     }
 
     // Sample feedback
@@ -187,7 +187,7 @@ async function handleGetPageState(sendResponse) {
     if (!pageLoaded) {
       sendResponse({
         success: false,
-        error: 'Interview.io page not detected'
+        error: 'Intervue.io page not detected'
       });
       return;
     }

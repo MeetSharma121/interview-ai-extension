@@ -29,7 +29,7 @@ Get started in 5 minutes!
 
 ## Step 4: Generate Your First Report (1 min)
 
-1. Open interview.io in Chrome
+1. Open intervue.io in Chrome
 2. Go to **Generate Report** page
 3. Click the extension icon
 4. **Paste** your interview transcript in the first box
@@ -47,7 +47,7 @@ Get started in 5 minutes!
 - → Generate a new key from OpenAI dashboard
 
 **❌ "No fields were filled"**
-- → Make sure you're on interview.io report page
+- → Make sure you're on intervue.io report page
 - → Try refreshing the page
 - → Check console for errors (F12)
 
@@ -77,7 +77,7 @@ Get started in 5 minutes!
    - Suggestions
    - Technical & communication skills
    - Final rating & recommendation
-✅ Automatically fills interview.io form
+✅ Automatically fills intervue.io form
 
 ### API Key Security
 
