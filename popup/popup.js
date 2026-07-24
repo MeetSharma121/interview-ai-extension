@@ -101,7 +101,7 @@ async function generateAndFillReport(transcript, feedback, apiKey) {
       const model = items.model || 'gpt-4-turbo';
 
       // Send message to content script to generate and fill report
-      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const tab = await getActiveWebTab();
 
       try {
         await ensureContentScriptInjected(tab.id);
@@ -139,6 +139,25 @@ async function generateAndFillReport(transcript, feedback, apiKey) {
     hideSpinner();
     enableButton();
   }
+}
+
+async function getActiveWebTab() {
+  const tabs = await chrome.tabs.query({
+    active: true,
+    lastFocusedWindow: true,
+    windowType: 'normal'
+  });
+
+  const tab = tabs[0];
+  if (!tab || !tab.id) {
+    throw new Error('No active browser tab found. Please open the Intervue report page in a normal window.');
+  }
+
+  if (!/^https?:\/\//.test(tab.url || '')) {
+    throw new Error('Active tab is not a valid webpage. Please open https://www.intervue.io/generate-report/ in a browser tab.');
+  }
+
+  return tab;
 }
 
 async function ensureContentScriptInjected(tabId) {
